@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>README.md Colored text helper</title>
+</head>
+<body style="text-align:center;">
+
+
+
+	<script src="jscolor.js"></script>
+
+
+
+
+	<button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
+		Pick text color
+	</button>
+
+	HEX value: <input id="chosen-value" value="000000">
+
+    <input placeholder="Your text" id="READMEtext" type="text", style="width: 300px" /> 
+    <button id="buttonGenerate" onclick="generateOutput()"> Generate the text</button>
+
+    <center><h1 id="output"></h1></center>
+	<script>
+	function setTextColor(picker) {
+		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+	}
+    function generateOutput()
+    {
+        var colorValue =  document.getElementById("chosen-value").value;
+        var readmeText = document.getElementById("READMEtext").value;
+        document.getElementById("output").innerText = "![#" + colorValue + "]" + "(https://placehold.it/15/" + colorValue + "/000000?text=+) `" + readmeText + "`";
+    }
+	</script>
+
+
+
+
+</body>
+</html>
